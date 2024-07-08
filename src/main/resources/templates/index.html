@@ -1,0 +1,46 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../static/styles.css">
+        <title>Test Task</title>
+    </head>
+    <body>
+        <!-- Form to add a student -->
+        <form id="addStudentForm">
+            <h2>Add Student</h2>
+            <input type="text" id="firstName" placeholder="First Name" required>
+            <input type="text" id="lastName" placeholder="Last Name" required>
+            <input type="text" id="patronymic" placeholder="Patronymic">
+            <input type="date" id="dateOfBirth" placeholder="Date of Birth" required>
+            <input type="text" id="group" placeholder="Group">
+            <button type="submit">Add</button>
+        </form>
+
+        <!-- Form to delete a student -->
+        <form id="deleteStudentForm">
+            <h2>Delete Student</h2>
+            <input type="text" id="studentIdToDelete" placeholder="Unique Number" required>
+            <button type="submit">Delete</button>
+        </form>
+
+        <!-- Table to display students -->
+        <h2>Student List</h2>
+        <table>
+            <thead>
+            <tr>
+                <th>Unique Number</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Patronymic</th>
+                <th>Date of Birth</th>
+                <th>Group</th>
+            </tr>
+            </thead>
+            <tbody id="studentTableBody">
+                <!-- To append student data into the table -->
+            </tbody>
+        </table>
+    </body>
+    <script src="../static/script.js"></script>
+</html>

@@ -16,6 +16,7 @@ import java.time.LocalDate;
 public class StudentDto {
     public static StudentDto buildFrom(Student student) {
         return StudentDto.builder()
+                .id(student.getId())
                 .firstName(student.getFirstName())
                 .lastName(student.getLastName())
                 .patronymic(student.getPatronymic())
@@ -24,6 +25,7 @@ public class StudentDto {
                 .build();
     }
 
+    private long id;
     @JsonProperty("first_name")
     private String firstName;
     @JsonProperty("last_name")
