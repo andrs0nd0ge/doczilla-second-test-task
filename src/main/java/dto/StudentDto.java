@@ -14,7 +14,7 @@ import java.time.LocalDate;
 @Setter
 @AllArgsConstructor
 public class StudentDto {
-    public StudentDto buildFrom(Student student) {
+    public static StudentDto buildFrom(Student student) {
         return StudentDto.builder()
                 .id(student.getId())
                 .firstName(student.getFirstName())
