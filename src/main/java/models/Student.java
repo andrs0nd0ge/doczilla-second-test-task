@@ -12,6 +12,6 @@ public class Student {
     private String firstName;
     private String lastName;
     private String patronymic;
-    private String group;
+    private String studyGroup;
     private LocalDate dateOfBirth;
 }

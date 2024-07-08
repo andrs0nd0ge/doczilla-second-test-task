@@ -16,22 +16,21 @@ import java.time.LocalDate;
 public class StudentDto {
     public static StudentDto buildFrom(Student student) {
         return StudentDto.builder()
-                .id(student.getId())
                 .firstName(student.getFirstName())
                 .lastName(student.getLastName())
                 .patronymic(student.getPatronymic())
-                .group(student.getGroup())
+                .studyGroup(student.getStudyGroup())
                 .dateOfBirth(student.getDateOfBirth())
                 .build();
     }
 
-    private long id;
     @JsonProperty("first_name")
     private String firstName;
     @JsonProperty("last_name")
     private String lastName;
     private String patronymic;
-    private String group;
+    @JsonProperty("study_group")
+    private String studyGroup;
     @JsonProperty("date_of_birth")
     private LocalDate dateOfBirth;
 }

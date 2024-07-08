@@ -2,9 +2,7 @@ package controller;
 
 import dto.StudentDto;
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import service.StudentService;
 
 import java.util.List;
@@ -15,8 +13,16 @@ import java.util.List;
 public class StudentController {
     private final StudentService studentService;
 
+    @PostMapping("add")
+    public void addStudent(@RequestBody StudentDto studentDto) {
+        studentService.addStudent(studentDto);
+    }
     // POST endpoint "add" for adding a student to the DB
 
+    @DeleteMapping("delete")
+    public void deleteStudentById(@RequestParam Long id) {
+        studentService.deleteStudentById(id);
+    }
     // DELETE endpoint "delete?id=..." for deleting a student from the DB
 
     @GetMapping("get-all")

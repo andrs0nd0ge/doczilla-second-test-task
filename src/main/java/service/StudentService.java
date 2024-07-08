@@ -15,6 +15,16 @@ import static java.util.stream.Collectors.toList;
 public class StudentService {
     private final StudentDao studentDao;
 
+    public void addStudent(StudentDto studentDto) {
+        studentDao.addStudent(studentDto);
+    }
+
+    public void deleteStudentById(Long id) {
+        if (id != null) {
+            studentDao.deleteStudentById(id);
+        }
+    }
+
     public List<StudentDto> getAllStudents() {
         List<Student> students = studentDao.getAllStudents();
 
