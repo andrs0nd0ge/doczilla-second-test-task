@@ -6,25 +6,35 @@
         <title>Test Task</title>
     </head>
     <body>
-        <!-- Form to add a student -->
+
         <form id="addStudentForm">
             <h2>Add Student</h2>
-            <input type="text" id="firstName" placeholder="First Name" required>
-            <input type="text" id="lastName" placeholder="Last Name" required>
-            <input type="text" id="patronymic" placeholder="Patronymic">
-            <input type="date" id="dateOfBirth" placeholder="Date of Birth" required>
-            <input type="text" id="group" placeholder="Group">
+            <label for="firstName">
+                <input type="text" id="firstName" placeholder="First Name (required)" required>
+            </label>
+            <label for="lastName">
+                <input type="text" id="lastName" placeholder="Last Name (required)" required>
+            </label>
+            <label for="patronymic">
+                <input type="text" id="patronymic" placeholder="Patronymic">
+            </label>
+            <label for="dateOfBirth">
+                <input type="date" id="dateOfBirth" placeholder="Date of Birth" required>
+            </label>
+            <label for="group">
+                <input type="text" id="group" placeholder="Group">
+            </label>
             <button type="submit">Add</button>
         </form>
 
-        <!-- Form to delete a student -->
         <form id="deleteStudentForm">
             <h2>Delete Student</h2>
-            <input type="text" id="studentIdToDelete" placeholder="Unique Number" required>
+            <label for="studentIdToDelete">
+                <input type="text" id="studentIdToDelete" placeholder="Unique Number" required>
+            </label>
             <button type="submit">Delete</button>
         </form>
 
-        <!-- Table to display students -->
         <h2>Student List</h2>
         <table>
             <thead>
@@ -38,7 +48,7 @@
             </tr>
             </thead>
             <tbody id="studentTableBody">
-                <!-- To append student data into the table -->
+
             </tbody>
         </table>
     </body>
