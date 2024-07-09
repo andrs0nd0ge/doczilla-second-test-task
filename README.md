@@ -9,7 +9,7 @@ The application uses `PostgreSQL`.\
 It can be started by running the ```main``` method of the ```Application``` class.
 
 ### ❗ Important Notes:
-The app automatically creates the schema and the table **in default database** for performing the database operations, so **make sure `PostgreSQL` is installed and configured before running the application**.
+The app automatically creates the schema and the table **in default database** for performing the database operations, so **make sure `PostgreSQL` is installed and configured (**_a data source is configured_**) before running the application**.
 
 ### ⛔ Constraints:
 * The student list is **not** updated without updating the page.
