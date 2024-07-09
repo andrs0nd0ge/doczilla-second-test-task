@@ -24,7 +24,7 @@ public class StudentDao {
         LocalDate dateOfBirth = studentDto.getDateOfBirth();
         String group = studentDto.getStudyGroup();
 
-        String sql = "insert into working_db.s.students (first_name, last_name, patronymic, date_of_birth, study_group)" +
+        String sql = "insert into s.students (first_name, last_name, patronymic, date_of_birth, study_group)" +
                 "values (?, ?, ?, ?, ?)";
         jdbcTemplate.update(con -> {
             PreparedStatement statement = con.prepareStatement(sql);
@@ -40,7 +40,7 @@ public class StudentDao {
     }
 
     public void deleteStudentById(Long id) {
-        String sql = "delete from working_db.s.students " +
+        String sql = "delete from s.students " +
                 "where id = ?";
         jdbcTemplate.update(con -> {
             PreparedStatement statement = con.prepareStatement(sql);
@@ -50,9 +50,7 @@ public class StudentDao {
     }
 
     public List<Student> getAllStudents() {
-        String sql = "select * from working_db.s.students";
+        String sql = "select * from s.students";
         return jdbcTemplate.query(sql, new BeanPropertyRowMapper<>(Student.class));
     }
-
-    // Three methods for adding a student entry to the DB, deleting an entry from the DB and inserting an entry to the DB
 }
