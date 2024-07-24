@@ -1,7 +1,6 @@
 package dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
@@ -12,7 +11,6 @@ import java.time.LocalDate;
 @Builder
 @Getter
 @Setter
-@AllArgsConstructor
 public class StudentDto {
     public static StudentDto buildFrom(Student student) {
         return StudentDto.builder()
@@ -23,6 +21,15 @@ public class StudentDto {
                 .studyGroup(student.getStudyGroup())
                 .dateOfBirth(student.getDateOfBirth())
                 .build();
+    }
+
+    public StudentDto(long id, String firstName, String lastName, String patronymic, String studyGroup, LocalDate dateOfBirth) {
+        this.id = id;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.patronymic = patronymic;
+        this.studyGroup = studyGroup;
+        this.dateOfBirth = dateOfBirth;
     }
 
     private long id;

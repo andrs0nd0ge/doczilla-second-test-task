@@ -2,7 +2,6 @@ package service;
 
 import dao.StudentDao;
 import dto.StudentDto;
-import lombok.RequiredArgsConstructor;
 import models.Student;
 import org.springframework.stereotype.Service;
 
@@ -11,9 +10,12 @@ import java.util.List;
 import static java.util.stream.Collectors.toList;
 
 @Service
-@RequiredArgsConstructor
 public class StudentService {
     private final StudentDao studentDao;
+
+    public StudentService(StudentDao studentDao) {
+        this.studentDao = studentDao;
+    }
 
     public void addStudent(StudentDto studentDto) {
         studentDao.addStudent(studentDto);

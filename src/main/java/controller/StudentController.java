@@ -1,7 +1,6 @@
 package controller;
 
 import dto.StudentDto;
-import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 import service.StudentService;
 
@@ -9,9 +8,12 @@ import java.util.List;
 
 @RestController
 @RequestMapping("api")
-@RequiredArgsConstructor
 public class StudentController {
     private final StudentService studentService;
+
+    public StudentController(StudentService studentService) {
+        this.studentService = studentService;
+    }
 
     @PostMapping("add")
     public void addStudent(@RequestBody StudentDto studentDto) {

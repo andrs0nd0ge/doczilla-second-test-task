@@ -1,7 +1,6 @@
 package dao;
 
 import dto.StudentDto;
-import lombok.RequiredArgsConstructor;
 import models.Student;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -13,9 +12,12 @@ import java.time.LocalDate;
 import java.util.List;
 
 @Component
-@RequiredArgsConstructor
 public class StudentDao {
     private final JdbcTemplate jdbcTemplate;
+
+    public StudentDao(JdbcTemplate jdbcTemplate) {
+        this.jdbcTemplate = jdbcTemplate;
+    }
 
     public void addStudent(StudentDto studentDto) {
         String firstName = studentDto.getFirstName();
