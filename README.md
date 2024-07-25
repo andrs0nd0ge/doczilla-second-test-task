@@ -6,8 +6,8 @@ The application has both front-end and back-end implemented, written on _**Vanil
 
 ### 🟩 Application Start:
 The application uses `PostgreSQL`.\
-It can be started by running the ```main``` method of the ```Application``` class.
-The application automatically opens `index.html` file from the `src\main\resources\static` folder in default browser for user's convenience.
+It can be started by running the ```main``` method of the ```Application``` class.\
+The application automatically opens `index.html` file from the `src\main\resources\static` folder in default browser for user's convenience.\
 In case it does not happen, the file can be opened manually **(by locating to the `src\main\resources\static` path inside the project)**.
 
 ### ❗ Important Notes:
