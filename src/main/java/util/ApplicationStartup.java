@@ -10,6 +10,8 @@ import java.net.URI;
 
 @Component
 public class ApplicationStartup implements ApplicationListener<ApplicationReadyEvent> {
+    @SuppressWarnings("FieldCanBeLocal")
+    private final String url = "http://localhost:8080";
 
     @Override
     public void onApplicationEvent(@NonNull ApplicationReadyEvent event) {
@@ -18,7 +20,6 @@ public class ApplicationStartup implements ApplicationListener<ApplicationReadyE
 
     private void openHomePage() {
         try {
-            String url = "http://localhost:8080";
             if (Desktop.isDesktopSupported()) {
                 Desktop.getDesktop().browse(new URI(url));
             } else {
